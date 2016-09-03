@@ -8,17 +8,17 @@
 <div id = "header">
 </div>
 <div id = "nav">
-<?php include $_SERVER[DOCUMENT] . '/home/a8711433/public_html/template/nav.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/template/nav.php'; ?>
 </div>
 <div id = "main">
 <p><h2>NON-ADMIN</h2></p>
 <p>Sorry You do not have access to admin control center</p>
 </div>
 <div id = "sidebar">
-<?php include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/sidebar.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/template/sidebar.php"; ?>
 </div>
 <div id = "footer">
-<?php include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/footer.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/template/footer.php"; ?>
 </div>
 </body>
 </html>

@@ -1,10 +1,12 @@
 <?php
-$email = $_POST['email'];
-
-$sql = "SELECT email from users_login WHERE email = '$email'";
-include "template/sql.php"; //run sql command using query method
+include "template/prepare_sql.php"; //SQL Prepare Function Execution
 include "template/functions.php"; 
-$result = $results->fetch(PDO::FETCH_ASSOC);
+
+$email = protect($_POST['email']);
+
+$sql = "SELECT email from users_login WHERE email = :email";
+$result = single_return_prepare_select ($sql, $pdo, [':email' => $email]);
+
 
 $random = rand (1, 50); //random number generator for new password
 
@@ -21,7 +23,7 @@ if (strncmp ($email, $result['email'], strlen($email)) == 0) {
        
        $sql = "UPDATE users_login SET password = '$cpass' WHERE email = '$email'";
        exe ($sql);
-       header('Location: mail_sent.html'); //direct users to mail_sent page
+       header('Location: mail_sent.php'); //direct users to mail_sent page
 }
 else {
        echo "The username inputted does not match in database";

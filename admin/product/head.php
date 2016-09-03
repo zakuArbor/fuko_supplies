@@ -1,5 +1,6 @@
 <?php
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/admin_check.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/admin_check.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
 echo "<html>
       <head>
       <title>$title</title>

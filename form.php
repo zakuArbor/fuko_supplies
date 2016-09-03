@@ -1,11 +1,13 @@
 <?php
+include ("template/prepare_sql.php");
+
 //variables from form
-$name = $_POST['name'];
-$last = $_POST['last'];
-$email = $_POST['email']; //email to send
-$email2 = $_POST['email2'];
-$password = $_POST['password'];
-$password2 = $_POST['password2'];
+$name = htmlspecialchars($_POST['name']);
+$last = htmlspecialchars($_POST['last']);
+$email = htmlspecialchars($_POST['email']); //email to send
+$email2 = htmlspecialchars($_POST['email2']);
+$password = htmlspecialchars($_POST['password']);
+$password2 = htmlspecialchars($_POST['password2']);
 $mail = 2; //loop control variable
 $error = "default"; //reset value
 
@@ -13,22 +15,22 @@ $error = "default"; //reset value
 $admin = "From: admin@fukosupplies.comuf.com\n"; //header
 $admin .= "MIME-Version: 1.0\r\n"; //needs this to be able to send html
 $admin .= "Content-Type: text/html; charset=ISO-8859-1\r\n"; //describes type sending is html
-$message = "<html><body>Welcome to Fuko Supplies, where we care about your online experience with us. Thank you for joining the growing online store on the web. Please read our <a href = 'hellogames.net63.net/policy.html'>Policy</a> before you shop</body></html>";
+$message = "<html><body>Welcome to Fuko Supplies, where we care about your online experience with us. Thank you for joining the growing online store on the web. Please read our <a href = 'hellogames.net63.net/policy.php'>Policy</a> before you shop</body></html>";
 
 //Error Trapping for reg.html
 if ($email != $email2 and $password != $password2) {
        $error = "true";
-       include 'reg.html';
+       include 'reg.php';
        exit(); //stop running PHP script
 }
 elseif ($password != $password2){
        $error = "true1";
-       include 'reg.html';
+       include 'reg.php';
        exit(); //stop running PHP script     
 }
 elseif ($email != $email2) {
        $error = "true2";
-       include 'reg.html';
+       include 'reg.php';
        exit(); //stop PHP script
 }
 include "check_email.php"; //checks if email is already registered
@@ -42,7 +44,7 @@ if ($error != "true3") {
      //mail
      try { //like if statements but is meant for error condition handling
             mail($email, "Registration Completed", $message, $admin); //send mail
-            header('Location: mail_sent.html'); //direct users to mail_sent page
+            header('Location: mail_sent.php'); //direct users to mail_sent page
      }
      catch (Exception $e) { //never know if email fails to be sent
             echo 'Message: ' .$e->getMessage(); //prints out error message (may be useful in the future when encounter some problems) 

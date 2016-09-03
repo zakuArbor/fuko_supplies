@@ -18,17 +18,19 @@
 <div id = "error">
 <?php 
 //prints out an error message
-if ($error == 'true') { 
-    echo 'The email and password you have entered do not match.';
-} 
-elseif ($error == 'true1') {
-    echo 'The password you have entered do not match. Please try again.';
-}
-elseif ($error == 'true2') {
-    echo 'The email addresses you have entered do not match. Please try again.';
-}
-elseif ($error == 'true3') {
-    echo 'Sorry, the email entered is already registered';
+if (isset($error)) {
+	if ($error == 'true') { 
+	    echo 'The email and password you have entered do not match.';
+	} 
+	elseif ($error == 'true1') {
+	    echo 'The password you have entered do not match. Please try again.';
+	}
+	elseif ($error == 'true2') {
+	    echo 'The email addresses you have entered do not match. Please try again.';
+	}
+	elseif ($error == 'true3') {
+	    echo 'Sorry, the email entered is already registered';
+	}
 }
 ?> 
 </div>

@@ -1,3 +1,4 @@
+<?php include_once ('template/prepare_sql.php'); ?>
 <html>
 <head>
 <title>Fuko's Supplies</title>

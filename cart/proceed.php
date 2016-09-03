@@ -9,7 +9,7 @@
 </div>
 
 <div id = 'nav'>
-<?php include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/nav.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/template/nav.php"; ?>
 </div>
 
 <div id = 'main'>
@@ -24,10 +24,10 @@
 <p>Please note that there is a <b>$25 shipping fee</b></p>
 </div>
 <div id = 'sidebar'>
-<?php include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/sidebar.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/template/sidebar.php"; ?>
 </div>
 <div id = 'footer'>
-<?php include ($_SERVER[DOCUMENT] . '/home/a8711433/public_html/template/footer.php'); ?>
+<?php include ($_SERVER['DOCUMENT_ROOT'] . '/template/footer.php'); ?>
 </div>
 </body>
 </html>

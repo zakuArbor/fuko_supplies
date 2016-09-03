@@ -1,6 +1,8 @@
 <?php
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/admin_check.php"; 
+include $_SERVER['DOCUMENT_ROOT'] . "/template/admin_check.php"; 
 $option = $_POST['option'];
+
+echo "<input type='hidden' name='value' value=''>";
 
 echo "<form action = 'update.php' method = 'post'>";
 if ($option == 'first') {
@@ -17,5 +19,7 @@ elseif ($option == 'password') {
        echo "Re-enter Password: <input type='password' name='password2' placeholder = 'Re-enter Password' required>";
 }
 echo "<input type='hidden' name='option' value='$option'>";
+echo "<input type='hidden' name='confirm' value=''>";
+echo "<input type='hidden' name='password_d' value=''>";
 echo "<input type='submit' value='Submit'></form>";
 ?>

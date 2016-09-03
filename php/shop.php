@@ -1,8 +1,8 @@
 <?php
-$shop_id = $_GET[id]; //data from query
-$sql = "SELECT shop_name FROM shops WHERE shop_id = $shop_id";
-include $_SERVER['DOCUMENT'] . "/home/a8711433/public_html/template/sql.php";
-$shop_name = $results -> fetch(PDO::FETCH_ASSOC);
+include_once ($_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php");
+$shop_id = htmlspecialchars($_GET['id']); //data from query
+$sql = "SELECT shop_name FROM shops WHERE shop_id = :shop_id";
+$shop_name = single_return_prepare_select ($sql, $pdo, [':shop_id' => $shop_id]);
 echo "<html>
       <head>
       <title>$shop_name[shop_name]</title>
@@ -13,17 +13,17 @@ echo "<body>
       <div id = 'header'>
       </div>
       <div id = 'nav'>";
-include $_SERVER['DOCUMENT'] . "/home/a8711433/public_html/template/nav.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/nav.php";
 echo "</div>
       <div id = 'main'>";
 
-include $_SERVER['DOCUMENT'] . "/home/a8711433/public_html/php/products.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/php/products.php";
 echo "</div>
       <div id = 'sidebar'>";
-include $_SERVER['DOCUMENT'] . "/home/a8711433/public_html/template/sidebar.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/sidebar.php";
 echo "</div>
       <div id = 'footer'>";
-include $_SERVER['DOCUMENT'] . "/home/a8711433/public_html/template/footer.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/footer.php";
 echo "</div>
       </body>
       </html>";	

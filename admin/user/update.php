@@ -1,9 +1,15 @@
 <?php
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/admin_check.php"; //checks if user has privilege to access file 
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/functions.php";
-$option = $_POST[option];
-$value = $_POST[value];
-$confirm = $_POST[confirm];
+include $_SERVER['DOCUMENT_ROOT'] . "/template/admin_check.php"; //checks if user has privilege to access file 
+include $_SERVER['DOCUMENT_ROOT'] . "/template/functions.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
+$option = htmlspecialchars($_POST['option']);
+$value = htmlspecialchars($_POST['value']);
+$confirm = htmlspecialchars($_POST['confirm']);
+
+if (empty($confirm)) {
+       $confirm = null;
+}
+
 
 /*******************************************************
 Name: users
@@ -12,7 +18,7 @@ Receives: two string and one integer
 Returns: nothing
 *******************************************************/
 function users ($option, $value, $id) {
-       include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/open.php"; //connects to database
+       include $_SERVER['DOCUMENT_ROOT'] . "/template/open.php"; //connects to database
        try {
        $sql = "UPDATE users SET $option='$value' WHERE user_id = $id";
        $pdo -> exec($sql);
@@ -31,7 +37,7 @@ Receives: two string and one integer
 Returns: nothing
 *******************************************************/
 function users_info ($option, $value, $id) {
-       include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/open.php"; //connects to database
+       include $_SERVER['DOCUMENT_ROOT'] . "/template/open.php"; //connects to database
        try {
               $sql2 = "UPDATE users_login SET $option='$value' WHERE user_id = $id";
               $pdo -> exec($sql2);
@@ -51,7 +57,7 @@ Receives: one integer
 Returns: nothing
 *******************************************************/
 function delete ($id) {
-       include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/open.php"; //connects to database
+       include $_SERVER['DOCUMENT_ROOT'] . "/template/open.php"; //connects to database
        try {
               $sql = "DELETE users, users_login FROM users INNER JOIN users_login ON users.user_id = users_login.user_id WHERE users.user_id = $id";
               $pdo ->exec($sql);
@@ -66,12 +72,17 @@ function delete ($id) {
 
 /************************************************************************************/
 if (isset($confirm)) {
-       $password_d = $_POST[password_d];
+       $password_d = htmlspecialchars($_POST['password_d']);
        $cpass = crypt_p($password_d);
-       session_start();
-       if ($cpass == $_SESSION[pass]) {
+       if (!isset($_SESSION)) {
+              session_start();
+       }
+       if ($cpass == $_SESSION['pass']) {
               if ($confirm == "true") {
-                     delete($_COOKIE[edit_id]);
+                     $sql = "DELETE FROM users WHERE users.user_id = :id;
+                             DELETE FROM users_login WHERE users_login.id = :id";
+                     prepare_non_query ($sql, $pdo, [':id' => $_COOKIE['edit_id']], 'Could not delete user', "Successfully Deleted User from Database");
+                     #delete($_COOKIE['edit_id']);
               }
               elseif ($confirm == "False") {
                       echo "User was not deleted";
@@ -84,26 +95,30 @@ if (isset($confirm)) {
 
 else {
        if ($option == 'first' || $option == 'last') { //for updating first or last name
-              users($option, $value,$_COOKIE[edit_id]);
+              $sql = "UPDATE users SET $option='$value' WHERE user_id = :id";
+              prepare_non_query($sql, $pdo, [':id' => $_COOKIE['edit_id']], "ERROR: Unable to update to database", "Successfully updated to database");
+              #users($option, $value,$_COOKIE['edit_id']);
        }
 
        elseif ($option == 'email' || $option == 'password') { //updating email or password
               if ($option == 'password') {
-                     $decoy = $_POST[password];
-                     $decoy2 = $_POST[password2];
+                     $decoy = htmlspecialchars($_POST['password']);
+                     $decoy2 = htmlspecialchars($_POST['password2']);
                      
                      if ($decoy != $decoy2) {
                             echo "The passwords you have entered do not match<br>Please try again";
-                            echo "<a href = '/admin/users.html'>[Go to Admin User Control]</a>";
+                            echo "<a href = '/admin/admin.php'>[Go to Admin User Control]</a>";
                             die(); //halt/stop code
                      }
                      else {
                             $value = crypt_p ($decoy);
                      }
                }
-       users_info ($option, $value, $_COOKIE[edit_id]);
+       $sql = "UPDATE users_login SET $option=:value WHERE user_id = :id";
+       prepare_non_query($sql, $pdo, [':value' => $value, ':id' => $_COOKIE['edit_id']], "ERROR: Unsuccessfully Updated", "Successfully Updated");
+       #users_info ($option, $value, $_COOKIE['edit_id']);
        }
 }
-echo "<p><a href = '/admin/user/users.html'>[Go to Admin User Control]</a></p>";
+echo "<p><a href = '/admin/user/index.php'>[Go to Admin User Control]</a></p>";
 
 ?>

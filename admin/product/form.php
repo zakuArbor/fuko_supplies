@@ -1,8 +1,11 @@
 <?php
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/admin_check.php"; 
-$option = $_POST['option'];
+include $_SERVER['DOCUMENT_ROOT'] . "/template/admin_check.php"; 
+$option = htmlspecialchars($_POST['option']);
 
-echo "<form action = 'update.php' method = 'post'>";
+echo "<form action = 'update.php' method = 'post'>
+      <input type='hidden' name='password_d' value=''>
+      <input type='hidden' name='confirm' value=''>
+      ";
 
 switch ($option) {
        case "name":

@@ -1,15 +1,14 @@
 <?php
 $id = htmlspecialchars($_GET['product_id']); //product_id from query
-$shop = htmlspecialchars(($_GET['shop']); //shop_name from query
-include $_SERVER[DOCUMENT] . "prepare_sql.php"; //php prepared functions
+$shop = htmlspecialchars($_GET['shop']); //shop_name from query
+include $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php"; //php prepared functions
  
 
 
-$sql = "SELECT products.name, :image, :price, :size, :description 
+$sql = "SELECT products.name, $shop.image, $shop.price, $shop.size, $shop.description 
         FROM products INNER JOIN $shop ON products.product_id = $shop.product_id
         WHERE products.product_id = :id";
-$product = single_return_prepare_select ($sql, $pdo, [':image' => "shop.image", ':price' => "$shop.price", ':size' => "$shop.size",
-                                                      'description' => "$shop_name.description", 'id' => $id]);
+$product = single_return_prepare_select ($sql, $pdo, ['id' => $id]);
 
 echo "<html>
       <head>
@@ -21,14 +20,14 @@ echo "<html>
       <div id = header></div>
       <div id = nav>";
 
-include $_SERVER[DOCUMENT] . '/template/nav.php'; 
+include $_SERVER['DOCUMENT_ROOT'] . '/template/nav.php'; 
 echo "</div>";
 include "product_display.php";
 echo "<div id = sidebar>";
-include $_SERVER['DOCUMENT'] . "/template/sidebar.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/sidebar.php";
 echo "</div>
       <div id = 'footer'>";
-include $_SERVER['DOCUMENT'] . "/template/footer.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/template/footer.php";
 echo "</div>
       </body>
       </html>";	

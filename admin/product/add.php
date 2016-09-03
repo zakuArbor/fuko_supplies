@@ -1,14 +1,11 @@
 <?php
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/admin_check.php"; //checks if user is admin
+include $_SERVER['DOCUMENT_ROOT'] . "/template/admin_check.php"; //checks if user is admin
+include $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php"; //checks if user is admin
 
 $sql = "SELECT shop_name, shop_id FROM shops";
-
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/sql.php"; //runs sql command
+$shop_name = array_prepare_select ($sql, $pdo, []);
 $i = 0;
 
-while($shops = $results->fetch()) {
-       $shop_name[] = array('name' => $shops[shop_name], 'id' => $shops[shop_id]); //stores value in an associative array
-}
 //print_r ($shop_name); //just want to see the values in the array
 
 echo "<form action = 'add_form.php' method = 'post'>
@@ -16,7 +13,7 @@ echo "<form action = 'add_form.php' method = 'post'>
       <p><select name = 'shop'>";
 
 foreach ($shop_name as $shop) {
-      echo "<option value='$shop[id]'>$shop[name]</option>";
+      echo "<option value='$shop[shop_id]'>$shop[shop_name]</option>";
 }
 
 echo "</select></p>
@@ -27,5 +24,5 @@ echo "</select></p>
       <textarea rows='10' cols='40' name= 'description' required>Enter Description...</textarea>
       <input type='submit' value='Submit'>";
 echo "<p><b>NOTE: DO NOT ADD A $ SIGN IN COST</b></p>";
-echo "<p><a href = '/admin/product/products.html'>[Go to Admin User Control]</a></p>";
+echo "<p><a href = '/admin/product/index.php'>[Go to Admin User Control]</a></p>";
 ?>

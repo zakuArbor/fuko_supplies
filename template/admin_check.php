@@ -1,7 +1,9 @@
 <?php
-session_start();
-if ($_SESSION[user] != 'admin@fukosupplies.comuf.com') {
-       header ("Location: http://fukosupplies.comuf.com/admin/non-admin.html");
+if (!isset($_SESSION)) { 
+	session_start();
+}
+if ($_SESSION['user'] != 'admin@fukosupplies.comuf.com') {
+       header ("Location: /admin/non-admin.php");
        die();       
 }
 ?>

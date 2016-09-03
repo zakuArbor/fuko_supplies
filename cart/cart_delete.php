@@ -1,9 +1,9 @@
 <?php
 $id_delete = $_GET['delete'];
 SESSION_START();
-print_r ($_SESSION[cart]);
+print_r ($_SESSION['cart']);
 echo "<br>";
-$_SESSION[cart][$id_delete] = 0;
+$_SESSION['cart'][$id_delete] = 0;
 
 $i = 0;
 /*
@@ -18,8 +18,9 @@ for ($i = $id_delete; $i < count($_SESSION['cart']); $i++) { //tried to do bubbl
   
 }*/
 
-print_r ($_SESSION[cart]);
+print_r ($_SESSION['cart']);
 echo "<br>Item has been removed from cart";
-echo "<a href = '/cart/cart.html'>[GO BACK TO CART]</a>";
+echo "<a href = '/cart/index.php'>[GO BACK TO CART]</a>";
+header('Location: index.php');
 
 ?>

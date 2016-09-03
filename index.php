@@ -13,7 +13,7 @@
 <div id = "main">
 <p><h1>WELCOME</h1></p>
 <p>Welcome to Fuko Supplies. To start shopping, please login. If you do not have an account then please proceed to 
-   <a href = 'reg.html'>registration page</a></p>
+   <a href = 'reg.php'>registration page</a></p>
 <p><b>Notice: Visitors who have wished to see Pokemon Cheats, the url changed to 
    <a href = '/hellogames/'>www.hellogames.net63.net/hellogames/</a></b></p>
 </div>
