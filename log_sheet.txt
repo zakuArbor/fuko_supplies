@@ -1,0 +1,200 @@
+Log Sheet:
+/*THINGS TO FIX
+     LEVELS:
+    //css problems
+     -1 - not major or important/serious
+     -2 - not major or serious but is visually unappealing to multiple devices
+    //php problems
+     -3 - minor logic problem 
+     -4 - major logic problem (not doing most of the ideal task) 
+     -5 - major, script does not run at all
+
+-Email re-send not working (lvl 4)
+-Edit CSS BANNER to fit in different resolutions (alert lvl. 2)
+-Login form box(located in sidebar) too long, doesn't adjust to different screen resolution (alert lvl. 2)
+-Fix reg.html header (banner not appearing) (lvl. 2) [FIXED AT 2013-12-22T20:07+05:00]
+-Fix ERROR 2 new blank user in form.php (lvl. 4) [FIXED AT 2013-12-26T14:10+05:00]
+-site layout does not look good in any resolution 1024x768 and lower (lvl 2)
+-in shop.html - sidebar repeats shops twice (may be a conflict for opening department.php twice) (lvl.3)  [SOLVED AT 2014-01-05T23:21+05:00] [Solution: $shop = null;]
+-form.php - second sql command not running (lvl.5) [SOLVED AT 2014-01-01T21:24+05:00]
+-admin.hmtl - logout directs to 000webhost (lvl.3)
+*/
+
+2013-12-17: created the index page 
+            created styles.css
+            created nav.php
+            created footer.php
+            created banner
+
+2013-12-18: created muliple banners
+            created reg.html
+            created form.php (added email function with html supported)
+            edited styles.css
+
+2013-12-19: created credit.html - added credit icon
+            edited sidebar: added(login and signup and added some icons (username and password)
+            deleted contact.html
+            edited styles.css
+
+2013-12-20: created sent_email.html - moved email function form form.php and linked sent_email.hmtl to form.php
+            added error trapping for registration (password and email matching) using if statements and include function
+            edited styles.css - created id selector called error to change color of error message
+
+2013-12-21: found error in re-sending email
+            created fuko database
+            created users table in fuko database
+            created open.php - connects to database
+            edited form.php - adds a new user
+
+2013-12-22: added comments in php files (open.php and form.php)
+            added sitemap.xml
+            added site into google webmaster tools in hopes to remove phishing label
+            added support.html
+            edited sidebar.php
+            Fixed Banner appearance in reg.html
+
+2013-12-23: added product.php - not completed
+            founded visual problem (alert level 2) - android tablet shows form box for login to appear long
+
+2013-12-25: created two favicon images
+
+2013-12-26: found error 2 - form.php adds a blank user every time page reloads or when user clicks re-send
+            Fixed error 2 - used a header() instead of include()
+            moved several php files into folders (open.php -> template ...)
+            created login.php - not finished
+            successfully able to encrypt passwords
+
+2013-12-27: finished login.php
+            created logout.php
+            created admin.html
+            updated sidebar.php - depending on user stats (e.g. logged in or not, admin or regular user) displays different content
+            created admin.html
+            created shop.html
+
+2013-12-28: edited shop.html
+            edited styles.css
+
+2013-12-29: edited shop.html
+            edited open.php
+            edited database table origami
+            edit login.php
+            
+2013-12-30: created two files (index.html and styles1.css) - beta design of product page information
+
+2013-12-31: published styles1.css
+            edited nav.php - made links relative to root (ex. images/icon.png -> /images/icon.png)
+
+2014-01-01: edited open.php
+            edited sidebar.php
+            created functions.php
+            created new table (shop) in database
+            edited shop.html
+            created department.php
+            edited form.php
+            created addusers.php
+            seperated entities(field/column) from table users -> created table users_login
+            edited login.php
+
+2014-01-02: created admin.html
+            created admin.css
+            created non-admin.html
+            created admin_check.php
+            created form_edit.php
+            created update.php
+            created edit_sql.php
+            created user_table.php
+            created users.php
+            created users.html
+            edited sidebar.php
+
+2014-01-02: edited admin_check.php
+            edited form_edit.php
+            edited update.php
+            edited functions.php
+
+2014-01-03: edited update.php
+            edited form_edit.php
+            edited edit_sql.php
+            
+2014-01-04: created products.html
+            created products.php
+            created product_info.php
+            created draw_table_products.php
+            created p_edit.php
+            created admin_department.php
+            created head.php
+
+2014-01-05: edited p_edit.php
+            edited department.php
+            created sql.php
+            edited login.php
+
+2014-01-06: created add.php
+            edited p_edit.php
+            editied admin/user/update.php
+            created admin/product/update.php
+            created admin/product/form.php
+            edited draw_table_products.php
+            edited product_info.php
+            created add_form.php 
+            edited products.html
+            edited products.php
+
+2014-01-07: edited add_form.php
+            edited add.php
+            created shop.php
+            edited shop.html
+            edited products.php
+            edited product.php
+
+2014-01-08: edited product.php
+
+2014-01-09: edited admin/product/update.php
+
+2014-01-14: edited styles.css
+
+2014-01-15: created table buy, buy_info, shipping
+            edited sidebar.php
+            edited product_display.php
+            created cart.php
+            created cart.html
+
+2014-01-16: edited cart.php
+            edited styles.css
+            edited styles1.css
+            edited functions.php
+            edited /php/product_display.php
+            created draw_table_cart.php
+    
+2014-01-17: edited cart.php
+            edited draw_table_cart.php
+
+2014-01-18: edited cart.php
+            edited cart.html
+
+2014-01-19: transferred all files into hellogames.net63.net
+            edited add_users.php
+            edited all files in [/temaplate/][/cart/][/admin/][/php/]
+
+2014-01-20: edited cart.html
+            created cart_retrieve.php
+            edited draw_table_cart.php
+
+2014-01-21: edited cart.html
+            created proceed.html
+            created process.php
+
+2014-01-22: edited draw_table_cart.php
+            edited process.php
+            edited sidebar.php
+            edited login.php
+
+2014-01-23: edited cart.html
+            edited process.php
+            edited proceed.html
+            created cart_delete.php
+            created cart_number.php
+            created policy.html
+
+2014-01-24: created forgot.html
+            created reset.php

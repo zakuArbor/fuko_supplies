@@ -1,0 +1,15 @@
+<?php
+include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/admin_check.php"; //checks if user is admin
+include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/admin/product/head.php"; //a template containing html <head>
+
+echo "<body>
+      <p><h2>Products</h2></p>";
+
+include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/admin/product/products.php"; //retrieves all data into an array
+include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/admin/product/draw_table_products.php"; //displays all data into a table
+
+echo "<p><a href = '/admin/admin.html'>[Go to Admin Control Center]</a></p>";
+include ($_SERVER[DOCUMENT] . '/home/a8711433/public_html/template/footer.php');
+?>
+</body>
+</html>	
