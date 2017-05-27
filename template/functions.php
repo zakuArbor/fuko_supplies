@@ -37,7 +37,7 @@ Returns: nothing
 *******************************************************/
 function exe ($sql) {
        try {
-              include $_SERVER[DOCUMENT] . "/template/open.php"; //connects to database
+              include $_SERVER['DOCUMENT_ROOT'] . "/template/open.php"; //connects to database
               $pdo -> exec($sql);
        }
        catch (PDOException $e) {
