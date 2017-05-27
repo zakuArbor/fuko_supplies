@@ -1,5 +1,5 @@
 <?php
-include $_SERVER[DOCUMENT] . "/home/a8711433/public_html/template/open.php"; //connects to database
+include $_SERVER[DOCUMENT] . "/template/open.php"; //connects to database
 try {
        $results = $pdo->query($sql); //runs sql query
 }
