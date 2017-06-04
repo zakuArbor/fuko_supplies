@@ -1,0 +1,22 @@
+#header {
+	float: center;
+	background: url('images/header.jpg') 0 0 no-repeat;
+	width: 80%;
+	height: 20%;
+}
+#nav {
+	position: relative;
+	text-family: Georgia;
+	font-weight: bold;
+	letter-spacing: 3px;
+	word-spacing: 15px;	
+	display: inline;
+}
+
+#footer {
+	clear: both;
+	//top: 100%;
+	font-family: georgia;
+	text-align: center;
+	font-weight: bold;
+}
