@@ -56,8 +56,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
     		</div>
 			
 		<div class="panel panel-primary">
-      			<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseY"><a class="accordion-toggle"><h4 class="panel-title">Pokemon Blue</a></h4></div>
-    			<div id="collapseY" class="panel-collapse collapse">  
+      			<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseB"><a class="accordion-toggle"><h4 class="panel-title">Pokemon Blue</a></h4></div>
+    			<div id="collapseB" class="panel-collapse collapse">  
     				<div class="panel-body">
 					<div class="panel-body">
 	 			<?php
@@ -78,8 +78,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
     		</div>	
 			
 		<div class="panel panel-primary">
-      			<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseY"><a class="accordion-toggle"><h4 class="panel-title">Pokemon Red</a></h4></div>
-    			<div id="collapseY" class="panel-collapse collapse">  
+      			<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseR"><a class="accordion-toggle"><h4 class="panel-title">Pokemon Red</a></h4></div>
+    			<div id="collapseR" class="panel-collapse collapse">  
     				<div class="panel-body">
 					<div class="panel-body">
 	 			<?php
