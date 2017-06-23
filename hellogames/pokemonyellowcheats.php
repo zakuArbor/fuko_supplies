@@ -30,6 +30,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
 					echo "<p>";
 				}
 				?>
+				<div id='br'>
    			   	</div>
 			</div>
     		</div>
@@ -51,6 +52,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
 					echo "<p>";
 				}
 				?>
+				<div id='br'>
       				</div>
       			</div>
     		</div>
@@ -73,6 +75,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
 					echo "<p>";
 				}
 				?>
+				<div id='br'>
       				</div>
       			</div>
     		</div>	
@@ -95,6 +98,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
 					echo "<p>";
 				}
 				?>
+				<div id='br'>
       				</div>
       			</div>
     		</div>
