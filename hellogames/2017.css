@@ -1,0 +1,28 @@
+#footer {
+  border-radius: 0px;
+  margin-top: 10px;
+  background-color: black;
+  text-align: center;
+  height: 50px;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.navbar-brand {
+  letter-spacing: 2px;
+}
+
+nav {
+  border-radius: 0px !important;
+}
+
+blockquote {
+  border-color: black;
+  background-color: #CCC;
+}
+#br {
+	border-top-style: dotted;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
