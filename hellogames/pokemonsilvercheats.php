@@ -38,8 +38,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/template/prepare_sql.php";
       			<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseY"><a class="accordion-toggle"><h4 class="panel-title">Pokemon Silver</a></h4></div>
     			<div id="collapseY" class="panel-collapse collapse">  
     				<div class="panel-body">
-					<div class="panel-body">
-	 			<?php
+				<?php
   
 				$sql = "SELECT * FROM cheats WHERE game_id = :game_id";
 				$items = array_prepare_select ($sql, $pdo, ['game_id' => 5]);				
