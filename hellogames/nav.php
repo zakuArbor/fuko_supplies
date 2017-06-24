@@ -28,8 +28,8 @@
           </ul>
         </li>
 
-        <li><a href="/hellogames/credit.php">Contact</a></li>
-        <li><a href="#">Credits</a></li>
+        <li><a href="/hellogames/contact.php">Contact</a></li>
+        <li><a href="/hellogames/credit.php">Credits</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
