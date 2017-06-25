@@ -16,7 +16,7 @@
 <blockquote><p><b>2013-10-29:</b> I decided to play around with PHP and the site is expected to be updated significantly as I study more about PHP and programming. I thinking of re-learning web designing and go further into programming and web designing until I graduate from High School</p></blockquote>
 <p><b>2017-06-23:</b>As I said earlier, I did study programming further in Highschool for fun. However, I was hoping to not study programming after high school but that never happened. Unfortunately (or fortunately), I am in university studying Computer Science at some Canadian University even though I never applied for the program. I will be further studying databases in the Fall and Web Computing in the Winter since they are offered in my university. However, I probably will not aim for a Computer Science job even though I am studying Computer Science because I have not much interest in Computer Science other than Operating Systems and Security. </p>
 ---------------------------------------------------------
-<p><a href = "https://github.com/zakuArbor/"></a>My GITHUB Account</p>
+<p><a href = "https://github.com/zakuArbor/">My GITHUB Account</a></p>
 <p><a href = "/hellogames/PHP_Testing/">Some PHP TEST</a></p>
 <p><a href = "/hellogames/pdf/Arrays.pdf"> Arrays -IN PDF FILE</a></p>
 <p>Developing a beta site for my possible summative assignment: <a href = "/hellogames/test1/index.html">Fuko's Supplies</a></p>
